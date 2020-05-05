@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<br><br>
 <div class="container" id="container">
 	<div class="sign-up-container" id="form-container">
         <form method="POST" action="{{ route('register') }}">
@@ -69,7 +70,7 @@
 			</div>
 			<div class="overlay-panel overlay-right">
 				<h1>Hello, Friend!</h1>
-				<p>Enter your personal details and start journey with us</p>
+				<p>Enter your personal details and start your journey with us</p>
 				<button class="ghost" id="signUp">Sign Up</button>
 			</div>
 		</div>

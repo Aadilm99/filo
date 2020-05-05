@@ -16,13 +16,15 @@
                                 <br>
                             @if(count($categories) > 0)
                                 @foreach($categories as $category)
-                                <a href='{{ url("category/{$category->id}") }}' style="height:5vh;margin:1%;" class="btn btn-outline-secondary btn-lg">{{strtoupper($category->category)}}</a>
+                                <a href='{{ url("category/{$category->id}") }}' style="width:15vh;height:5vh;margin:1%;" class="btn btn-outline-dark btn-lg">{{strtoupper($category->category)}}</a>
                                    {{--<li class="list-group-item"><a style="font-size:20px;" href='{{ url("category/{$category->id}") }}'>{{strtoupper($category->category)}}</a></li>--}}
                                 @endforeach
                             @else
                                 <p>No Category Found!</p>
                             @endif
                         </ul>
+                        <br>
+                        <h2 style="float: left">Found Items:</h2>
                         <br><br><hr>
                 <div id="posts" class="col-md-12 ">
                     @if(count($posts) > 0)

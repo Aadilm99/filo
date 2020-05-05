@@ -1,9 +1,9 @@
 @extends('layouts.app')
 <style type="text/css">
-    .size{
-        font-size: 1rem;
-    };
-
+   .size{font-size: 1rem;}
+    #post_title{width: 20vw;}
+    #found_location{width: 20vw;}
+    #colour{width:20vw;}
 </style>
 @section('content')
 <div class="container">
@@ -15,7 +15,7 @@
                     <br>
                     <form method="POST" action="{{ url('/editPost', array($posts->id)) }}" enctype="multipart/form-data">
                         @csrf
-                        <div class="form-group row">
+                        <div class="form-group row"  style="transform:translateX(-11%);">
                             <label for="post_title" class="col-md-4 col-form-label text-md-right"><h5>Title</h5></label>
 
                             <div class="col-md-6">
@@ -33,7 +33,7 @@
                             <label for="post_description" class="col-md-4 col-form-label text-md-right"><h5>Description</h5></label>
 
                             <div class="col-md-6">
-                                <textarea rows="10" cols="30" id="post_description" type="post_description" class="form-control @error('post_description') is-invalid @enderror" name="post_description"  required autocomplete="post_description">{{$posts->post_description}}</textarea>
+                                <textarea rows="10" cols="100" id="post_description" type="post_description" class="form-control @error('post_description') is-invalid @enderror" name="post_description"  required autocomplete="post_description">{{$posts->post_description}}</textarea>
 
                                 @error('post_description')
                                     <span class="invalid-feedback" role="alert">
@@ -44,10 +44,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="category_id	" class="col-md-4 col-form-label text-md-right"><h5>Select Item Category</h5></label>
+                            <label for="category_id	" style="transform:translateX(-8%);" class="col-md-4 col-form-label text-md-right"><h5>Select Item Category</h5></label>
 
                             <div class="col-md-6">
-                                <select id="category_id" type="category_id" class="form-control @error('category_id') is-invalid @enderror" name="category_id" required autocomplete="category_id">
+                                <select id="category_id" style="width:20vw;transform:translateX(-7%);" type="category_id" class="form-control @error('category_id') is-invalid @enderror" name="category_id" required autocomplete="category_id">
                                     <option class="size" value="{{ $category->id }}">{{$category->category}}</option>
                                     @if(count($categories) > 0)
                                     @foreach($categories as $category)
@@ -77,7 +77,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <div class="form-group row" style="transform:translateX(-9.2%);">
                             <label for="colour" class="col-md-4 col-form-label text-md-right"><h5>Colour</h5></label>
 
                             <div class="col-md-6">
@@ -90,7 +90,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <div class="form-group row" style="transform:translateX(-6%);">
                             <label for="found_location" class="col-md-4 col-form-label text-md-right"><h5>Found Location</h5></label>
 
                             <div class="col-md-6">
@@ -106,8 +106,8 @@
                         <br>
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary btn-lg ">
-                                    Update Post
+                                <button style="width:10vw" type="submit" class="btn btn-primary btn-lg ">
+                                    Update Item Post
                                 </button>
                             </div>
                         </div>

@@ -2,7 +2,8 @@
 <style type="text/css">
     .size{font-size: 1rem;}
     #post_title{width: 20vw;}
-
+    #found_location{width: 20vw;}
+    #colour{width:20vw;}
 </style>
 @section('content')
 <div class="container">
@@ -39,12 +40,12 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div><br>
                         <div class="form-group row">
-                            <label for="category_id	" style="transform:translateX(-5%);" class="col-md-4 col-form-label text-md-right"><h5>Select Item Category</h5></label>
+                            <label for="category_id	" style="transform:translateX(-8%);" class="col-md-4 col-form-label text-md-right"><h5>Select Item Category</h5></label>
 
                             <div class="col-md-6">
-                                <select id="category_id" style="width:20vw;transform:translateX(-8%);" type="category_id" class="form-control @error('category_id') is-invalid @enderror" name="category_id" required autocomplete="category_id">
+                                <select id="category_id" style="width:20vw;transform:translateX(-7%);" type="category_id" class="form-control @error('category_id') is-invalid @enderror" name="category_id" required autocomplete="category_id">
                                     @if(count($categories) > 0)
                                     @foreach($categories as $category)
                                         <option class="size" value="{{ $category->id }}">{{$category->category}}</option>
@@ -73,7 +74,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div style="transform:translateX(-11%);" class="form-group row">
+                        <div style="transform:translateX(-9.2%);" class="form-group row">
                             <label for="colour" class="col-md-4 col-form-label text-md-right"><h5>Colour</h5></label>
 
                             <div class="col-md-6">
@@ -86,7 +87,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div style="transform:translateX(-11%);" class="form-group row">
+                        <div style="transform:translateX(-6%);" class="form-group row">
                             <label for="found_location" class="col-md-4 col-form-label text-md-right"><h5>Found Location</h5></label>
 
                             <div class="col-md-6">
@@ -103,7 +104,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button style="width:10vw"type="submit" class="btn btn-primary btn-lg ">
-                                    Create Post
+                                    Create Item Post
                                 </button>
                             </div>
                         </div>

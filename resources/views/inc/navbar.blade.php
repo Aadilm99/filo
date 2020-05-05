@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-inverse shadow-sm">
 
-                <a style="font-size:20px;font-weight:bold;" class="navbar-brand" href="{{ url('/') }}">
+                <a style="font-size:20px;font-weight:bold;" class="navbar-brand" href="{{ url('#') }}">
                     {{ config('app.name', 'FiLo') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -51,6 +51,7 @@
                                 @if(Auth::check() && !Auth::user()->isAdmin)
                                     <a class="dropdown-item" href="{{ url('/profile') }}">Profile</a>
                                     <a class="dropdown-item" href="{{ url('/home') }}">DashBoard</a>
+                                    <a class="dropdown-item" href="{{ url('/myRequests') }}">My Requests</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

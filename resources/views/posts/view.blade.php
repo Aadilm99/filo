@@ -20,7 +20,7 @@
                         <div>
                             <h1 style="text-decoration:underline">{{$post->post_title}}</h1>
                             <br>
-                            <img class="img-thumbnail" style="width:100% height:100%" src="/posts/{{ $post->post_image }}" alt="">
+                            <img class="img-thumbnail" style="width:100% height:100%" src="{{ $post->post_image }}" alt="">
                         <br><br><hr>
                             <div class="text-center">
                                 <h3>{{$post->post_description}}</h3>
