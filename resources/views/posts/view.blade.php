@@ -24,6 +24,10 @@
                         <br><br><hr>
                             <div class="text-center">
                                 <h3>{{$post->post_description}}</h3>
+                                    <br>
+                                <h4>{{$post->colour}}</h4>
+                                <br>
+                                <h4>{{$post->found_location}}</h4>
                             </div>
                         </div>
                         <br>
