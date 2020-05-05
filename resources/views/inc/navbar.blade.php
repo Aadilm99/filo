@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-inverse shadow-sm">
 
-                <a style="font-size:20px;font-weight:bold;" class="navbar-brand" href="{{ url('/') }}">
+                <a style="font-size:20px;font-weight:bold;" class="navbar-brand" href="{{ route('/') }}">
                     {{ config('app.name', 'FiLo') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -11,20 +11,20 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto p-1">
                         <li class="nav-item">
-                            <a  style="font-size:15px;" class="nav-link" href="/">Home</a>
+                            <a  style="font-size:15px;" class="nav-link" href="{{ route('/') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:15px;" class="nav-link" href="/category/{id}">Found Items</a>
+                            <a style="font-size:15px;" class="nav-link" href="{{ route('/category/{id}') }}">Found Items</a>
                         </li>
                         {{-- @if(Auth::check() && Auth::user()->isAdmin == 1) --}}
                         @if(Auth::user() && !Auth::user()->isAdmin)
                         <li class="nav-item">
-                            <a style="font-size:15px;" class="nav-link" href="/post">Add Item</a>
+                            <a style="font-size:15px;" class="nav-link" href="{{ route('/post') }}">Add Found Item</a>
                         </li>
                         @endif
                         @if(Auth::check() && Auth::user()->isAdmin)
                         <li class="nav-item">
-                            <a style="font-size:15px;font-weight:bold;" class="nav-link" href="/request/{id}">Admin Dashboard</a>
+                            <a style="font-size:15px;font-weight:bold;" class="nav-link" href="{{ route('/request/{id}') }}">Admin Dashboard</a>
                         </li>
                         @endif
                     </ul>
@@ -34,11 +34,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="/">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('/') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('/') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -49,8 +49,8 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 @if(Auth::check() && !Auth::user()->isAdmin)
-                                    <a class="dropdown-item" href="/profile">Profile</a>
-                                    <a class="dropdown-item" href="/home">DashBoard</a>
+                                    <a class="dropdown-item" href="{{ route('/profile') }}">Profile</a>
+                                    <a class="dropdown-item" href="{{ route('/home') }}">DashBoard</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -61,7 +61,7 @@
                                     </form>
                                 @endif
                                     @if(Auth::check() && Auth::user()->isAdmin)
-                                        <a class="dropdown-item" href="/category">Category</a>
+                                        <a class="dropdown-item" href="{{ route('/category')}}">Category</a>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
